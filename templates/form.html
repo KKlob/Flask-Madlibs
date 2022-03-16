@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>Madlibs</h1>
+{% endblock %}
+
+{% block content %}
+<form action="/story">
+    {% for prompt in prompts %}
+    <p>
+        <label for="{{prompt}}">{{prompt}}: </label>
+        <input name="{{prompt}}">
+    </p>
+    {% endfor %}
+    <button>Submit</button>
+</form>
+
+<script src="app.js"></script>
+{% endblock %}
